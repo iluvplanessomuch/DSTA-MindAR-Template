@@ -47,7 +47,15 @@
 
 </script> 
 
+<script src="./components/avatar-effect-utils.js"></script> 
 
+<!-- glTF Effects --> 
+
+<script src="./components/effect-glitch.js"></script> 
+
+<script src="./components/effect-glow.js"></script> 
+
+<script src="./components/effect-matrix.js"></script> 
 
 
 </head>
@@ -73,9 +81,17 @@
 		<!-- Place your A-Frame Primitives below -->
 		<a-entity mindar-image-target="targetIndex: 0">
 			<a-plane src="#card" position="0 0 0" width="1" height="0.6"  rotation="0 0 0"
-			material ="shader: hologram; glitchBarDrift: 0.05; rgbSeparation: 0.5; glitchRate: 1;"
-			material ="shader: holo-shimmer; shimmerIntensity: 0.5;  foilBrightness: 0.2; tiling: 1.0" 
+			material ="shader: hologram; glitchBarDrift: 0.05; rgbSeparation: 0.5; glitchRate: 1;shader: holo-shimmer; shimmerIntensity: 0.5;  foilBrightness: 0.2; tiling: 1.0"
+			< a-plane position="0 0 -0.1" height="2.2" width="2.2" rotation="0 0 90" shader-time material="shader: halo-rings; color: #00e5ff; intensity: 0.9; transparent: true; depthWrite: false; blending: additive;"></a-plane> 
 			></a-plane>
+
+<a-plane position="0 0 -0.02" width="1.5" height="1" rotation="0 0 0" 
+
+material="shader: card-glow; color: #00e5ff; intensity: 1.35; transparent: true; depthWrite: false; blending: additive;"> 
+
+</a-plane> 
+
+
 			<a-text text="value: RONG YAO" align="left" position="-0.44 0.08 0" width="1.5"></a-text> 
 
 			<a-text text="value: student" align="left" position="-0.44 0.02 0" width="1"></a-text> 
@@ -86,7 +102,10 @@
 </a-text>
 			</a-text> 
 			<a-entity position="0.35 0.2 0.1" rotation="90 0 0"> 
-<a-gltf-model id="avatarModel" src="#avatarModel" position="0 0 0" rotation="0 0 0" scale="0.4 0.4 0.4" ></a-gltf-model> 
+<a-gltf-model id="avatarModel" src="#avatarModel" position="0 0 0" rotation="0 0 0" scale="0.4 0.4 0.4" 
+effect-glitch="part: M_Tone01, Robot_Dog; color: #ff3aa3; intensity: 2; glitchRate: 1" 
+
+></a-gltf-model> 
 </a-entity> 
 		</a-entity>
 	</a-scene>
